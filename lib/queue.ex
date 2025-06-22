@@ -14,8 +14,8 @@ defmodule Queue do
 
   ## Examples
 
-  iex> Queue.init()
-  []
+      iex> Queue.init()
+      []
   """
   def init do
     []
@@ -26,8 +26,8 @@ defmodule Queue do
 
   Returns the queue with the value appended to it.
 
-  iex> Queue.enqueue([], 1)
-  [1]
+      iex> Queue.enqueue([], 1)
+      [1]
   """
   def enqueue(queue, value) do
     queue ++ [value]
@@ -42,11 +42,11 @@ defmodule Queue do
 
   ## Examples
 
-  iex> Queue.dequeue([])
-  nil
+      iex> Queue.dequeue([])
+      nil
 
-  iex> Queue.dequeue([1,2])
-  {[2], 1}
+      iex> Queue.dequeue([1,2])
+      {[2], 1}
 
   """
   def dequeue(queue) do
@@ -66,11 +66,11 @@ defmodule Queue do
 
   ## Examples
 
-  iex> Queue.peek([1,2,3])
-  1
+      iex> Queue.peek([1,2,3])
+      1
 
-  iex> Queue.peek([])
-  nil
+      iex> Queue.peek([])
+      nil
 
   """
   def peek(queue) do
@@ -87,11 +87,11 @@ defmodule Queue do
 
   ## Examples
 
-  iex> Queue.empty?([])
-  true
+      iex> Queue.empty?([])
+      true
 
-  iex> Queue.empty?([1,2,3])
-  false
+      iex> Queue.empty?([1,2,3])
+      false
 
   """
   def empty?(queue) do
@@ -103,14 +103,14 @@ defmodule Queue do
 
   ## Examples
 
-  iex> Queue.length_of([])
-  0
+      iex> Queue.length_of([])
+      0
 
-  iex> Queue.length_of([1])
-  1
+      iex> Queue.length_of([1])
+      1
 
-  iex> Queue.length_of([1,2,3])
-  3
+      iex> Queue.length_of([1,2,3])
+      3
   """
   def length_of(queue) do
     length(queue)

@@ -7,13 +7,12 @@ defmodule Stack do
   @doc """
   Given a stack and value, pushes the value to the stack.
 
-  Returns `[]`.
+  Returns a stack with the value pushed to the front of it.
 
   ## Examples
 
-  iex> Stack.push([2,3], 1)
-  [1,2,3]
-
+      iex> Stack.push([], 1)
+      [1]
   """
   def push(stack, value) do
     [value | stack]
@@ -22,15 +21,17 @@ defmodule Stack do
   @doc """
   Pops the first item from the stack.
 
-  Returns `{first_item, remaining_stack}`
+  Returns `{first_item, remaining_stack}` if list is nonempty.
+
+  Returns `{nil, []}` if list is empty.
 
   ## Examples
 
-  iex> Stack.pop([1,2,3])
-  {1, [2,3]}
+      iex> Stack.pop([1,2,3])
+      {1, [2,3]}
 
-  iex> Stack.pop([])
-  {nil, []}
+      iex> Stack.pop([])
+      {nil, []}
 
   """
   def pop(stack) do
@@ -47,15 +48,13 @@ defmodule Stack do
   @doc """
   Given a stack, returns the first value.
 
-  Returns `first_value`
-
   ## Examples
 
-  iex> Stack.peek([1,2,3])
-  1
+      iex> Stack.peek([1,2,3])
+      1
 
-  iex> Stack.peek([])
-  nil
+      iex> Stack.peek([])
+      nil
 
   """
   def peek(stack) do
@@ -68,12 +67,12 @@ defmodule Stack do
   @doc """
   Given a stack, returns true if the stack is empty.
 
-  Returns `true` or `false`.
+  Returns `boolean`.
 
   ## Examples
 
-  iex> Stack.empty?([])
-  true
+      iex> Stack.empty?([])
+      true
 
   """
   def empty?(stack) do
