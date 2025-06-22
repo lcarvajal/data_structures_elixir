@@ -7,7 +7,7 @@ Documentation for each data structure is under `doc/index.html`.
 ## Roadmap
 
 - [x] Stack
-- [ ] Queue
+- [x] Queue
 - [ ] Linked List
 - [ ] Binary Tree
 - [ ] Binary Search Tree
