@@ -8,7 +8,7 @@ Documentation for each data structure is under `doc/index.html`.
 
 - [x] Stack
 - [x] Queue
-- [ ] Linked List
+- [x] Linked List
 - [ ] Binary Tree
 - [ ] Binary Search Tree
 - [ ] Hash Map (Dictionary)
