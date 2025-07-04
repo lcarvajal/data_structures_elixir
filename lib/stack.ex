@@ -80,24 +80,32 @@ defmodule Stack do
   end
 end
 
-stack = [2, 3]
+defmodule StackExample do
+  @moduledoc """
+  Showcases the Stack
+  """
 
-IO.puts("Result:")
+  def execute do
+    stack = [2, 3]
 
-pushed_stack = Stack.push(stack, 1)
-IO.inspect(pushed_stack)
+    IO.puts("Result:")
 
-popped_stack = Stack.pop(stack)
-IO.inspect(popped_stack)
+    pushed_stack = Stack.push(stack, 1)
+    IO.inspect(pushed_stack)
 
-popped_empty_stack = Stack.pop([])
-IO.inspect(popped_empty_stack)
+    popped_stack = Stack.pop(stack)
+    IO.inspect(popped_stack)
 
-peeked_stack = Stack.peek(stack)
-IO.inspect(peeked_stack)
+    popped_empty_stack = Stack.pop([])
+    IO.inspect(popped_empty_stack)
 
-peeked_empty_stack = Stack.peek([])
-IO.inspect(peeked_empty_stack)
+    peeked_stack = Stack.peek(stack)
+    IO.inspect(peeked_stack)
 
-empty_stack = Stack.empty?(stack)
-IO.inspect(empty_stack)
+    peeked_empty_stack = Stack.peek([])
+    IO.inspect(peeked_empty_stack)
+
+    empty_stack = Stack.empty?(stack)
+    IO.inspect(empty_stack)
+  end
+end

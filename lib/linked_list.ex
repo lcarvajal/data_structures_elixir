@@ -3,6 +3,12 @@ defmodule LinkedListNode do
 end
 
 defmodule LinkedList do
+  @moduledoc """
+
+  A linked list is made of nodes. Each node has a value as well as a pointer which points to the next node.
+
+  """
+
   defstruct head: nil
 
   @doc """
@@ -168,6 +174,10 @@ defmodule LinkedList do
 end
 
 defmodule LinkedListExample do
+  @moduledoc """
+  Showcases the LinkedList
+  """
+
   def execute do
     linked_list = LinkedList.init()
     IO.puts("Original linked list:")
@@ -203,5 +213,3 @@ defmodule LinkedListExample do
     IO.inspect(LinkedList.tail(linked_list))
   end
 end
-
-LinkedListExample.execute()

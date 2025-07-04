@@ -117,24 +117,32 @@ defmodule Queue do
   end
 end
 
-IO.puts("Init:")
-q = Queue.init()
-IO.inspect(q)
+defmodule QueueExample do
+  @moduledoc """
+  Showcases the Queue
+  """
 
-IO.puts("Enqueue 1 and 2:")
-q = Queue.enqueue(q, 1)
-q = Queue.enqueue(q, 2)
-IO.inspect(q)
+  def execute do
+    IO.puts("Init:")
+    q = Queue.init()
+    IO.inspect(q)
 
-IO.puts("Dequeue:")
-{q, first} = Queue.dequeue(q)
-IO.inspect(q)
-IO.inspect(first)
+    IO.puts("Enqueue 1 and 2:")
+    q = Queue.enqueue(q, 1)
+    q = Queue.enqueue(q, 2)
+    IO.inspect(q)
 
-IO.puts("Peek:")
-first = Queue.peek(q)
-IO.inspect(first)
-IO.inspect(q)
+    IO.puts("Dequeue:")
+    {q, first} = Queue.dequeue(q)
+    IO.inspect(q)
+    IO.inspect(first)
 
-IO.puts("Size:")
-IO.inspect(Queue.length_of(q))
+    IO.puts("Peek:")
+    first = Queue.peek(q)
+    IO.inspect(first)
+    IO.inspect(q)
+
+    IO.puts("Size:")
+    IO.inspect(Queue.length_of(q))
+  end
+end
