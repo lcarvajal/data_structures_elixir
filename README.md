@@ -10,7 +10,7 @@ Documentation for each data structure is under `doc/index.html`.
 - [x] Queue
 - [x] Linked List
 - [ ] Binary Tree
-- [ ] Binary Search Tree
+- [x] Binary Search Tree
 - [ ] Hash Map (Dictionary)
 - [ ] Set
 - [ ] Graph

@@ -1,4 +1,4 @@
-defmodule Queue do
+defmodule DsEx.Queue do
   @moduledoc """
   A queue has the first in, first out principle. 
 
@@ -43,7 +43,7 @@ defmodule Queue do
   ## Examples
 
       iex> Queue.dequeue([])
-      nil
+      {[], nil}
 
       iex> Queue.dequeue([1,2])
       {[2], 1}
@@ -117,10 +117,12 @@ defmodule Queue do
   end
 end
 
-defmodule QueueExample do
+defmodule DsEx.QueueExample do
   @moduledoc """
   Showcases the Queue
   """
+
+  alias DsEx.Queue
 
   def execute do
     IO.puts("Init:")

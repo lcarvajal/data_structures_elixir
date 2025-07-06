@@ -1,4 +1,4 @@
-defmodule Stack do
+defmodule DsEx.Stack do
   @moduledoc """
   A stack is a data structure with first in, last out.
   You can think of it as a stack of plates, where the first plate stacked is the last to get unstacked.
@@ -80,10 +80,12 @@ defmodule Stack do
   end
 end
 
-defmodule StackExample do
+defmodule DsEx.StackExample do
   @moduledoc """
   Showcases the Stack
   """
+
+  alias DsEx.Stack
 
   def execute do
     stack = [2, 3]

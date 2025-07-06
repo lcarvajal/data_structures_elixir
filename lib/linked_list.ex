@@ -1,13 +1,16 @@
-defmodule LinkedListNode do
+defmodule DsEx.LinkedListNode do
   defstruct [:value, :pointer]
 end
 
-defmodule LinkedList do
+defmodule DsEx.LinkedList do
   @moduledoc """
 
   A linked list is made of nodes. Each node has a value as well as a pointer which points to the next node.
 
   """
+
+  alias DsEx.LinkedList
+  alias DsEx.LinkedListNode
 
   defstruct head: nil
 
@@ -18,6 +21,7 @@ defmodule LinkedList do
 
       iex> LinkedList.init()
       %LinkedList{head: nil}
+
   """
   def init do
     %LinkedList{head: nil}
@@ -38,6 +42,7 @@ defmodule LinkedList do
       iex> linked_list = %LinkedList{head: node_1}
       iex> LinkedList.empty?(linked_list)
       false
+
   """
   def empty?(%LinkedList{head: head}), do: head == nil
 
@@ -48,7 +53,8 @@ defmodule LinkedList do
 
     iex> linked_list = %LinkedList{head: %LinkedListNode{value: "hello", pointer: nil}}
     iex> LinkedList.head(linked_list)
-    hello
+    "hello"
+
   """
   def head(%LinkedList{head: %LinkedListNode{value: value}}), do: value
 
@@ -59,10 +65,11 @@ defmodule LinkedList do
       
       iex> linked_list = %LinkedList{ head: nil }
       iex> linked_list = LinkedList.prepend(linked_list, "world")
-      iex> linked_list = LinkedList.prepend(linked_list, "Hello, "
+      iex> linked_list = LinkedList.prepend(linked_list, "Hello, ")
       iex> linked_list = LinkedList.remove_head(linked_list)
-      iex> linked_list.head.value
-      world
+      iex> LinkedList.head(linked_list) 
+      "world"
+
   """
   def remove_head(%LinkedList{head: %LinkedListNode{value: _value, pointer: new_head}}),
     do: %LinkedList{head: new_head}
@@ -82,6 +89,7 @@ defmodule LinkedList do
       iex> linked_list = %LinkedList{head: node_1}
       iex> LinkedList.tail(linked_list)
       1
+
   """
   def tail(%LinkedList{head: existing_head}) do
     tail_node = traverse_to_tail_node(existing_head)
@@ -102,9 +110,12 @@ defmodule LinkedList do
 
       iex> linked_list = %LinkedList{ head: nil }
       iex> linked_list_with_one_node = LinkedList.prepend(linked_list, "world")
-      world
-      iex> linked_list_with_two_nodes = LinkedList.prepend(linked_list_with_one_node, "Hello, "
-      Hello, world
+      iex> LinkedList.head(linked_list_with_one_node)
+      "world"
+      iex> linked_list_with_two_nodes = LinkedList.prepend(linked_list_with_one_node, "Hello, ")
+      iex> LinkedList.head(linked_list_with_two_nodes)
+      "Hello, "
+
   """
   def prepend(%LinkedList{head: nil}, value) do
     node = %LinkedListNode{value: value, pointer: nil}
@@ -122,10 +133,11 @@ defmodule LinkedList do
   ## Examples
 
       iex> linked_list = LinkedList.init()
-      iex> linked_list = LinkedList.append(1)
+      iex> linked_list = LinkedList.append(linked_list, 1)
       iex> linked_list = LinkedList.append(linked_list, 2)
       iex> LinkedList.tail(linked_list)
       2
+
   """
   def append(%LinkedList{head: nil}, value) do
     node = %LinkedListNode{value: value, pointer: nil}
@@ -145,7 +157,7 @@ defmodule LinkedList do
   ## Examples
 
       iex> linked_list = LinkedList.init()
-      iex> linked_list = LinkedList.append(1)
+      iex> linked_list = LinkedList.append(linked_list, 1)
       iex> linked_list = LinkedList.append(linked_list, 2)
       iex> reversed_list = LinkedList.reverse(linked_list)
       iex> LinkedList.head(reversed_list)
@@ -173,10 +185,12 @@ defmodule LinkedList do
   end
 end
 
-defmodule LinkedListExample do
+defmodule DSEx.LinkedListExample do
   @moduledoc """
   Showcases the LinkedList
   """
+
+  alias DsEx.LinkedList
 
   def execute do
     linked_list = LinkedList.init()
