@@ -4,6 +4,23 @@ Practicing data structures with Elixir.
 
 Documentation for each data structure is under `doc/index.html`.
 
+## Getting started
+
+Start the interactive shell within the project directory:
+
+```
+$ iex -S mix
+```
+
+Then, see how example data structures work using the `execute` function:
+
+```
+iex(1)> DsEx.StackExample.execute()
+iex(2)> DsEx.QueueExample.execute()
+iex(3)> DsEx.LinkedListExample.execute()
+iex(4)> DsEx.BinarySearchTreeExample.execute()
+```
+
 ## Roadmap
 
 - [x] Stack
